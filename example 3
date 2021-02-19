@@ -1,0 +1,20 @@
+public class ExThree{
+
+     public static void main(String []args){
+        print("ABC", "");
+     }
+     
+     public static void print(String word, String prefix) {
+         
+        if (word.length() == 1) {
+            System.out.println(prefix + word);
+            return;
+        }
+        
+        for ( int index = 0 ; index < word.length() ; index++) {
+            String newPrefix = word.substring(index, index+1);
+            String newWord = word.substring(0, index) + word.substring(index+1);
+            print(newWord, prefix + newPrefix);
+        }
+     }
+}
