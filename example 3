@@ -1,13 +1,19 @@
 public class ExThree{
+    
+    public static String result = ",";
 
      public static void main(String []args){
-        print("ABC", "");
+        print("112", "");
+        result = result.substring(1, result.length()-1);
+        System.out.print(result);
      }
      
      public static void print(String word, String prefix) {
          
         if (word.length() == 1) {
-            System.out.println(prefix + word);
+            if (!(result).contains(prefix + word)) {
+                result = result + prefix + word + ",";
+            }
             return;
         }
         
