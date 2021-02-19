@@ -1,0 +1,51 @@
+let words = ["VMRCO", "VORCM", "MCRTOX", "ZXTAC", "XZATC", "XMTCOR", "OXVS", "AZTXC", "VXOS", "RZAT", "MRCOTX", "SVXO", "TRAZ", "ZTAR", "MVOCR"];
+printName(words)
+
+function printName(words) {
+  let wordsArray = words.slice();
+
+  for (i = 0; i < wordsArray.length; i++) {
+    wordsArray[i] = wordsArray[i].split("");
+    wordsArray[i].sort()
+    wordsArray[i] = wordsArray[i].join("")
+  }
+  
+  let result = []
+  
+  for (i = 0; i < wordsArray.length; i++) {
+    for (j = i + 1; j < wordsArray.length; j++) {
+     if (wordsArray[j] !== '' && wordsArray[i] === wordsArray[j]) {
+        if (result[i] == null) {
+         result[i] = words[i]
+        }
+        result[i] = result[i] +  ', ' + words[j]
+        wordsArray[j] = ''
+    }
+   }
+  }
+  
+  result = result.filter(function (el) {
+   return el != null;
+ });
+  
+  for ( i = 0 ; i < result.length ; i++ ) {
+   console.log((i + 1) + '. ' + result[i])
+  }
+
+}
+
+function isEqual(a, b) {
+
+  if (a.length === b.length) {
+   for(i = 0; i <= a.length; i++) {
+     if (a[i]!==b[i]) {
+       break;
+      }
+      if (i === a.length - 1) {
+       return true
+      }
+    }
+  }
+  
+ return false
+}
