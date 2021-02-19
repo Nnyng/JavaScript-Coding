@@ -1,0 +1,9 @@
+function series_sum(current,n){
+ if(current > n)return 0;
+ return Math.pow(current,current) + series_sum(current+1,n);
+}
+
+
+let n = 2;
+let current = 1;
+console.log(series_sum(1,n));
