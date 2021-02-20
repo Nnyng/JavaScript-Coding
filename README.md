@@ -1,17 +1,4 @@
 # JavaScript-Coding
 Quiz for Developer position
 
-function isPalindrome(word)
-{
-		word = word.toUpperCase()
-    const len = word.length;
-    for (let i = 0; i < len / 2; i++) {
-        if (word[i] !== word[len - 1 - i]) {
-            return false;
-        }
-    }
-    return true;
-}
 
-var word = 'Deleveled'
-console.log(word, isPalindrome(word) )
